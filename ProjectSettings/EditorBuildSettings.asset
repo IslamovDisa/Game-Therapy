@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/GameTherapy/Scenes/MainMenu.unity
+    guid: 9e3f56f0de34d496780c5f4e7dbcd57f
+  - enabled: 0
+    path: Assets/GameTherapy/Scenes/WorldTemplate.unity
+    guid: f14ea08be4b25464284d712f4dca12e1
+  - enabled: 1
+    path: Assets/GameTherapy/Scenes/Auth.unity
+    guid: 8997df03bdf0f464283f633b6ce2e63e
   m_configObjects: {}

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "158410108284",
+    "project_id": "gametherapy-6a923",
+    "storage_bucket": "gametherapy-6a923.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:158410108284:android:5b06c9487735258288c8f9",
+        "android_client_info": {
+          "package_name": "com.Disa.GameTherapy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "158410108284-bv3lhhd2039ljd4nffcm4ji78j3bdd4s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBC5GjcskYtFQTPTdI0XFn1b_v8c93gBug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "158410108284-bv3lhhd2039ljd4nffcm4ji78j3bdd4s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "158410108284-nkoi1od3nb8dc8mgho973lo9njc5e73h.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Disa.GameTherapy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
