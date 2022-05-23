@@ -5527,6 +5527,73 @@ Transform:
   m_Father: {fileID: 139856175}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &759900924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1809710142717510, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_Name
+      value: LoftTieMouseDrivenPathfinderAI 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4641358202997358, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114521150146711736, guid: 4ad3c2882d8d84f50b15f745c5f750b8,
+        type: 3}
+      propertyPath: Cam
+      value: 
+      objectReference: {fileID: 20055413369060215}
+    - target: {fileID: 114521150146711736, guid: 4ad3c2882d8d84f50b15f745c5f750b8,
+        type: 3}
+      propertyPath: Destination
+      value: 
+      objectReference: {fileID: 901092272}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4ad3c2882d8d84f50b15f745c5f750b8, type: 3}
 --- !u!1001 &767807327
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6475,6 +6542,10 @@ PrefabInstance:
     - target: {fileID: 1809710142717510, guid: 53fdfa4f8d7eca04ea65a96dfecdf1db, type: 3}
       propertyPath: m_Name
       value: MouseDrivenPathfinderAI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809710142717510, guid: 53fdfa4f8d7eca04ea65a96dfecdf1db, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4641358202997358, guid: 53fdfa4f8d7eca04ea65a96dfecdf1db, type: 3}
       propertyPath: m_RootOrder
@@ -13160,7 +13231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1435463349510889
 GameObject:
   m_ObjectHideFlags: 0
@@ -17547,7 +17618,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 0
-    m_SensorSize: {x: 0.69902235, y: 1}
+    m_SensorSize: {x: 0.77717394, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0

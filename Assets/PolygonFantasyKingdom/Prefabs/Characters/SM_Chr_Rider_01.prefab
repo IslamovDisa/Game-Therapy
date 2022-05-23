@@ -495,7 +495,6 @@ GameObject:
   - component: {fileID: 4398255760794400}
   - component: {fileID: 95635282217120634}
   - component: {fileID: 724462546}
-  - component: {fileID: 724462549}
   m_Layer: 7
   m_Name: SM_Chr_Rider_01
   m_TagString: Untagged
@@ -574,19 +573,6 @@ CapsuleCollider:
   m_Height: 1.8414083
   m_Direction: 1
   m_Center: {x: 0, y: 0.88532233, z: 0}
---- !u!114 &724462549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116677665208918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4061d6ac53fa4cb4a23e691c2de9352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _selectedQuad: {fileID: 6640010850344407652}
 --- !u!1 &1141734011407956
 GameObject:
   m_ObjectHideFlags: 0

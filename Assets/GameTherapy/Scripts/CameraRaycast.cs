@@ -11,7 +11,7 @@ public class CameraRaycast : MonoBehaviour
     [SerializeField] private Transform _debugTransform;
     
     [Space(10)]
-    [SerializeField] private SelectManager _selectManager;
+    [SerializeField] private SelectionManager _selectManager;
 
     private const int MaxDistance = 1000;
     
@@ -22,9 +22,11 @@ public class CameraRaycast : MonoBehaviour
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit, MaxDistance, _groundLayerMask))
             {
-                if (_selectManager.SelectedCharacter != null)
+                if (_selectManager.CurrentSelection != null)
                 {
-                    _selectManager.SelectedCharacter.transform.position = hit.point;
+                    var selectableActor = _selectManager.CurrentSelection as SelectableActor;
+                    var movable = selectableActor?.GetComponent<IMovable>();
+                    movable?.MoveTo(hit.point);
                 }
             }
         }
@@ -32,28 +34,10 @@ public class CameraRaycast : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hit, MaxDistance, _characterLayerMask))
+            if (Physics.Raycast(ray, out var hit))
             {
-                var selectCharacterOnScene = hit.collider.gameObject.GetComponent<SelectCharacterOnScene>();
-
-                if (_selectManager.SelectedCharacter != selectCharacterOnScene)
-                {
-                    if (_selectManager.SelectedCharacter != null)
-                    {
-                        _selectManager.SelectedCharacter.Deselect();
-                    }
-
-                    selectCharacterOnScene.Select(2);
-                    _selectManager.SelectedCharacter = selectCharacterOnScene;
-                }
-            }
-            else
-            {
-                if (_selectManager.SelectedCharacter != null)
-                {
-                    _selectManager.SelectedCharacter.Deselect();
-                    _selectManager.SelectedCharacter = null;
-                }
+                var selectableActor = hit.collider.gameObject.GetComponent<SelectableActor>();
+                _selectManager.CurrentSelection = selectableActor;
             }
         }
     }
