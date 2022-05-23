@@ -2407,6 +2407,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _agent: {fileID: 1107443601}
+--- !u!114 &1107443606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107443599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e07cee151dddb4acca6161c1e7a3bc6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!225 &1118101868 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 225650105049614452, guid: d4529f47989526241929319abfdfc29d,
@@ -2842,6 +2854,10 @@ PrefabInstance:
     - target: {fileID: 1116677665208918, guid: e11051163540ebf4884417f50c226d1c, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1116677665208918, guid: e11051163540ebf4884417f50c226d1c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1141734011407956, guid: e11051163540ebf4884417f50c226d1c, type: 3}
       propertyPath: m_Layer

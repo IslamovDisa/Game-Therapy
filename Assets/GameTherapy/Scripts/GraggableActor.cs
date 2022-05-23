@@ -13,23 +13,21 @@ public class GraggableActor : MonoBehaviour
     private void Update()
     {
         Vector3 v3;
-        if (Input.touchCount != 1)
+        if (Input.GetMouseButtonDown(2))
         {
             _dragging = false;
             return;
         }
  
-        var touch = Input.touches[0];
-        Vector3 pos = touch.position;
- 
-        if (touch.phase == TouchPhase.Began)
+        //var touch = Input.touches[0];
+        var pos = Input.mousePosition;
+        if (Input.GetMouseButton(2))
         {
             var ray = Camera.main.ScreenPointToRay(pos);
-            RaycastHit hit;
- 
-            if (Physics.Raycast(ray, out hit))
+
+            if (Physics.Raycast(ray, out var hit))
             {
-                if (hit.collider.CompareTag("cube"))
+                if (hit.collider.CompareTag("Player"))
                 {
                     _toDrag = hit.transform;
                     _dist = hit.transform.position.z - Camera.main.transform.position.z;
@@ -42,14 +40,14 @@ public class GraggableActor : MonoBehaviour
             }
         }
  
-        if (_dragging && touch.phase == TouchPhase.Moved)
+        if (_dragging && Input.GetMouseButton(2))
         {
             v3 = new Vector3(Input.mousePosition.x, Input.mousePosition.y, _dist);
             v3 = Camera.main.ScreenToWorldPoint(v3);
             _toDrag.position = v3 + _offset;
         }
  
-        if (_dragging && (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled))
+        if (_dragging && Input.GetMouseButtonUp(2))
         {
             _dragging = false;
         }
