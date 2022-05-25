@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IDraggable 
 {
     public bool IsDragging { get; set; }
+    public void Drag(Vector3 pos);
 }

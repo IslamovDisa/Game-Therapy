@@ -12,7 +12,8 @@ public class CameraRaycast : MonoBehaviour
     
     [Space(10)]
     [SerializeField] private SelectionManager _selectManager;
-
+    [SerializeField] private DraggableManager _draggableManager;
+    
     private const int MaxDistance = 1000;
     
     private void Update()
@@ -34,11 +35,37 @@ public class CameraRaycast : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out var hit))
+            if (Physics.Raycast(ray, out var hit, MaxDistance))
             {
                 var selectableActor = hit.collider.gameObject.GetComponent<SelectableActor>();
                 _selectManager.CurrentSelection = selectableActor;
             }
+        }
+        
+        // TODO Draggble manager as selectable
+        if (Input.GetMouseButtonDown(2))
+        {
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, MaxDistance, _characterLayerMask))
+            {
+                var draggableActor = hit.collider.gameObject.GetComponent<DraggableActor>();
+                _draggableManager.CurrentDraggable = draggableActor;
+            }
+        }
+
+        if (Input.GetMouseButton(2))
+        {
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, MaxDistance, _groundLayerMask))
+            {
+                _draggableManager.CurrentDraggable?.Drag(hit.point);
+            }
+        }
+        
+
+        if (Input.GetMouseButtonUp(2))
+        {
+            _draggableManager.CurrentDraggable = null;
         }
     }
 }
