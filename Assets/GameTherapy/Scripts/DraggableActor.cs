@@ -10,6 +10,11 @@ public class DraggableActor : MonoBehaviour, IDraggable
         set
         {
             _isDragging = value;
+            if (_agent == null)
+            {
+                return;
+            }
+            
             _agent.isStopped = _isDragging;
             _agent.ResetPath();
         }

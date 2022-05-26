@@ -7,9 +7,7 @@ public class AnimatedActor : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _agent;
     [SerializeField] private Animator _animator;
-
-    public float Speed;
-
+    
     private void Update()
     {
         _animator.SetFloat("Speed", _agent.desiredVelocity.magnitude / _agent.acceleration);

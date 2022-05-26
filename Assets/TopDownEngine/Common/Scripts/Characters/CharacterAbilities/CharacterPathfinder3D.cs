@@ -157,7 +157,7 @@ namespace MoreMountains.TopDownEngine
             _waypoints = AgentPath.GetCornersNonAlloc(Waypoints);
             if (_waypoints >= Waypoints.Length)
             {
-                Array.Resize(ref Waypoints, _waypoints +5);
+                Array.Resize(ref Waypoints, _waypoints + 5);
                 _waypoints = AgentPath.GetCornersNonAlloc(Waypoints);
             }
             if (_waypoints >= 2)
