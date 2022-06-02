@@ -16,7 +16,7 @@ public class CameraRaycast : MonoBehaviour
     
     private const int MaxDistance = 1000;
     
-    private void Update()
+    private void FixedUpdate()
     {
         if (Input.GetMouseButton(0))
         {

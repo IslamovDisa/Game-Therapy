@@ -4,5 +4,5 @@ using UnityEngine;
 public class WeatherInfo : WorldElementInfo
 {
     public Texture2D[] Textures;
-    public ParticleSystem _particles;
+    public ParticleSystem Particles;
 }

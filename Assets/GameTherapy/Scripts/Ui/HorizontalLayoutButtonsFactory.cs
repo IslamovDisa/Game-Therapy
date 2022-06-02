@@ -4,18 +4,18 @@ using UnityEngine;
 public class HorizontalLayoutButtonsFactory : MonoBehaviour
 {
     [SerializeField] private RectTransform _parant;
-    [SerializeField] private List<ItemInfo> _itemsInfo = new List<ItemInfo>();
-    [SerializeField] private ItemInfoButton _itemInfoButtonPrefab;
+    [SerializeField] private List<WorldElementInfo> _itemsInfo = new List<WorldElementInfo>();
+    [SerializeField] private GameObject _itemInfoButtonPrefab;
     
-    private List<ItemInfoButton> _itemInfoButtons = new List<ItemInfoButton>();
+    private List<WorldElementInfoButton> _worldElementInfoButtons = new List<WorldElementInfoButton>();
 
     private void Start()
     {
         foreach (var itemInfo in _itemsInfo)
         {
-            var itemInfoButton = Instantiate(_itemInfoButtonPrefab, _parant);
+            var itemInfoButton = Instantiate(_itemInfoButtonPrefab, _parant).GetComponent<ItemInfoButton>();
             itemInfoButton.WorldElementInfo = itemInfo;
-            _itemInfoButtons.Add(itemInfoButton);
+            _worldElementInfoButtons.Add(itemInfoButton);
         }
     }
 }

@@ -5,13 +5,18 @@ using UnityEngine.AI;
 public class DraggableActor : MonoBehaviour, IDraggable
 {
     private bool _isDragging;
+    private Rigidbody _rigidbody;
     
     [SerializeField] private string dragLayerName = "Drag";
     private int _defaultLayer;
 
+    public bool CanMove { get; set; }
+
     private void Awake()
     {
+        CanMove = true;
         _defaultLayer = gameObject.layer;
+        _rigidbody = GetComponent<Rigidbody>();
     }
 
     public bool IsDragging
@@ -36,7 +41,7 @@ public class DraggableActor : MonoBehaviour, IDraggable
                 _agent.ResetPath();
             }
 
-            _agent.enabled = !_isDragging;
+            //_agent.enabled = !_isDragging;
         }
     }
 
@@ -44,6 +49,18 @@ public class DraggableActor : MonoBehaviour, IDraggable
     
     public void Drag(Vector3 pos)
     {
-        transform.position = pos;
+        if (!CanMove)
+        {
+            return;
+        }
+
+        if (_rigidbody == null)
+        {
+            transform.position = pos;
+        }
+        else
+        {
+            _rigidbody.MovePosition(pos);
+        }
     }
 }
