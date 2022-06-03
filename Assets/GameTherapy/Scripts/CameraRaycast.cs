@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -13,11 +14,36 @@ public class CameraRaycast : MonoBehaviour
     [Space(10)]
     [SerializeField] private SelectionManager _selectManager;
     [SerializeField] private DraggableManager _draggableManager;
+    [SerializeField] private SpawnManager _spawnManager;
     
     private const int MaxDistance = 1000;
-    
+
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            _spawnManager.CurrentSpawnObject = null;
+        }
+        
+        if (Input.GetMouseButtonUp(2))
+        {
+            _draggableManager.CurrentDraggable = null;
+        }
+    }
+
     private void FixedUpdate()
     {
+        if (_spawnManager.CurrentSpawnObject != null)
+        {
+            var ray = _camera.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, MaxDistance, _groundLayerMask))
+            {
+                _spawnManager.CurrentSpawnObject.Drag(hit.point);
+            }
+            
+            return;
+        }
+
         if (Input.GetMouseButton(0))
         {
             var ray = _camera.ScreenPointToRay(Input.mousePosition);
@@ -60,12 +86,6 @@ public class CameraRaycast : MonoBehaviour
             {
                 _draggableManager.CurrentDraggable?.Drag(hit.point);
             }
-        }
-        
-
-        if (Input.GetMouseButtonUp(2))
-        {
-            _draggableManager.CurrentDraggable = null;
         }
     }
 }
