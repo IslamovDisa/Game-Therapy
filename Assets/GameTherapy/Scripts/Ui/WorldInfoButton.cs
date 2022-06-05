@@ -6,9 +6,9 @@ public class WorldInfoButton : WorldElementInfoButton
     [SerializeField] private Image _like;
     [SerializeField] private Image _dislike;
 
-    public override void Start()
+    public override void Init()
     {
-        base.Start();
+        base.Init();
 
         var worldInfo = worldElementInfo as WorldInfo;
         _like.gameObject.SetActive(worldInfo.Like);

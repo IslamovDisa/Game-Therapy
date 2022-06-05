@@ -15,7 +15,7 @@ public class WorldElementInfoButton : MonoBehaviour
     [SerializeField] private Text _label;
     [SerializeField] private Image _thumbnail;
     
-    public virtual void Start()
+    public virtual void Init()
     {
         _label.text = worldElementInfo.Name;
         _thumbnail.sprite = worldElementInfo.Thumbnail;
