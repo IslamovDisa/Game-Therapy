@@ -1,10 +1,12 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class WorldElementInfoButton : MonoBehaviour
 {
     [SerializeField] protected WorldElementInfo worldElementInfo;
-
+    [SerializeField] protected Button _button;
+    
     public WorldElementInfo WorldElementInfo
     {
         get => worldElementInfo;
@@ -19,5 +21,31 @@ public class WorldElementInfoButton : MonoBehaviour
     {
         _label.text = worldElementInfo.Name;
         _thumbnail.sprite = worldElementInfo.Thumbnail;
+    }
+
+    protected virtual void OnEnable()
+    {
+        if (_button == null)
+        {
+            return;
+        }
+
+        _button.onClick.AddListener(OnButtonClick);
+    }
+
+    protected virtual void OnDisable()
+    {
+        if (_button == null)
+        {
+            return;
+        }
+        
+        _button.onClick.RemoveListener(OnButtonClick);
+    }
+
+    protected virtual void OnButtonClick()
+    {
+        var sceneLoadEvent = new SceneLoadEvent(worldElementInfo.SceneName);
+        EventManager.Instance.QueueEvent(sceneLoadEvent);
     }
 }

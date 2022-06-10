@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 1
   Name: Space
+  SceneName: WorldTemplate
   Thumbnail: {fileID: -9094709233690712633, guid: 095a0c41c276c4e81b8202d9c2881fb3,
     type: 3}
   SceneName: Space
