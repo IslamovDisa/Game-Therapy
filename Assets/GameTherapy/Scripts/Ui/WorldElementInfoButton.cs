@@ -45,7 +45,8 @@ public class WorldElementInfoButton : MonoBehaviour
 
     protected virtual void OnButtonClick()
     {
-        var sceneLoadEvent = new SceneLoadEvent(worldElementInfo.SceneName);
+        var worldInfo = worldElementInfo as WorldInfo;
+        var sceneLoadEvent = new SceneLoadEvent(worldInfo?.SceneName);
         EventManager.Instance.QueueEvent(sceneLoadEvent);
     }
 }
