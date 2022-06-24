@@ -10,11 +10,12 @@ public class DataController : MonoBehaviour
 
     public void Awake()
     {
-        if (Current != null)
+        if (Current != null && Current != this)
         {
             Destroy(this);
+            return;
         }
-
+        
         Current = this;
         DontDestroyOnLoad(this.gameObject);
     }
